@@ -15,48 +15,33 @@ class node{
 
 class Stack{
 
-
-
     public:
-    node* top = new node(-1);
-    node* head = new node(-1);
+    node* top;
+
+    Stack() { top == NULL;}
 
     void push(int data){
         node* temp = new node(data);
 
-        if(head->next == NULL){
-            head->next = temp;
-            top = temp;
-            
-        }
-        else{
-            top->next = temp;
-            top = temp;
-        }
+        temp->next = top;
+        top = temp;
     }
 
     bool isEmpty(){
-        return (head->next == NULL);
+        return (top == NULL);
     }
 
     void pop(){
-        if(top == head){
+        if(top == NULL){
             cout<<"Stack Underflow"<<endl;
         }
         else{
-            node* ptr = head;
-
-            while(ptr->next != top){
-                ptr =  ptr->next;
-            }
-            ptr->next = NULL;
-            top = ptr;
+            top = top->next;
         }
     }
 
     int peek(){
-        if(head->next == NULL){
-            cout<<"The stack is empty"<<endl;
+        if(top == NULL){
             return -1;
         }
         else{
