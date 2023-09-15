@@ -23,5 +23,6 @@ using namespace std;
 int main(){
 
     string s = "abc";
+    int a = 7;
 
 }
