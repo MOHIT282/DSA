@@ -43,7 +43,7 @@ void levelOrderTraversalTree(node* &root){
         int rightData;
         cin >> rightData;
 
-        if(leftData != -1){
+        if(rightData != -1){
             temp->right = new node(rightData);
             q.push(temp->right);
         }
