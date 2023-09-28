@@ -11,8 +11,9 @@ void right_half_pyramid(int n){
 
     for(int i = 1; i <= n; i++){
 
+        
         for(int j = 1; j <= i; j++){
-            cout<<"*";
+            cout<<'A' + i<<" ";
         }
         cout<<endl;
     }
@@ -92,29 +93,68 @@ void rhombus(int n){
     }
 }
 
-void diamond(int n){
+void diamond(int rows){
 
-    for(int i = 0; i < n - 1; i++){
-
-        for(int j = 0; j < n - i - 1; j++)
-            cout<<" ";
+    for(int i =0; i < rows - 1; i++){
         
-        for(int k = 0; k < (2 * i) + 1; k++)
-            cout<<"*";
-
+        for(int j = 0; j < rows - i - 1; j++){
+            cout<<"  ";
+        }
+        
+        for(int k = 0; k < 2 * i + 1; k++){
+            cout<<k+1<<" ";
+        }
         cout<<endl;
     }
+    
+    for(int i = 0; i < rows; i++){
+        
+        for(int j = 0; j < i; j++)
+            cout<<"  ";
+            
+        for(int k = 0; k < 2 * (rows - i) - 1; k++)
+            cout<<k+1<<" ";
+        
+        cout<<endl;
+    }
+}
 
-    for(int i = 0; i < n ; i++){
+void hollow_diamond(int rows){
+
+    for(int i = 0; i < rows - 1; i++){
+
+        for(int j = 0; j < rows - i - 1; j++)
+            cout<<"  ";
+
+        for(int k = 0; k < 2 * i + 1; k++){
+
+            if(k == 0 || k == 2 * i|| i == rows - 1)
+                cout<<"* ";
+            
+            else{
+                cout<<"  ";
+            }
+        }
+        cout<<endl;
+
+    }
+
+    for(int i = 0; i < rows; i++){
 
         for(int j = 0; j < i; j++)
-            cout<<" ";
+            cout<<"  ";
 
-        for(int k = 0; k < 2 * (n - i) - 1; k++)
-            cout<<"*";
+        for(int k = 0; k < 2 * (rows - i) - 1; k++){
 
+            if(k == 0 || k == 2*(rows - i) - 2)
+                cout<<"* ";
+            
+            else
+                cout<<"  ";
+        }
         cout<<endl;
     }
+
 }
 
 void hourGlass(int n){
@@ -144,39 +184,55 @@ void hourGlass(int n){
 
 void hollowSquare(int n){
 
-    for(int i = 0; i < n; i++)
-        cout<<"* ";
-    cout<<endl;
+    for(int i = 0; i < n; i++){
 
-    for(int i = 0; i < n - 2; i++){
+        for(int j = 0; j < n; j++){
 
-        cout<<"* ";
-
-        for(int j = 0; j < n - 2; j++)
-            cout<<"  ";
-        
-        cout<<"* ";
-
+            if((i > 0 && i < n - 1) && (j > 0 && j < n - 1))
+                cout<<"  ";
+            else
+                cout<<j<<" ";
+        }
         cout<<endl;
     }
-
-    for(int i = 0; i < n; i++)
-        cout<<"* ";
 }
 
-// void hollow_full_pyramid(int n){
+void hollow_full_pyramid(int n){
 
-//     for(int i = 0; i < n; i++){
+    for(int i = 0; i < n; i++){
 
-//         for(int j = 0; j < n - i - 1; j++)
-//             cout<<" ";
+        for(int j = 0; j < n - i - 1; j++)
+            cout<<"  ";
+        
+        for(int k = 0; k < 2 * i + 1; k++){
 
-//         for(int k = 0; k < 2*i + 1; k++){
+            if( k == 0 || k == 2 * i || i == n - 1 )
+                cout<<"* ";
+            else
+                cout<<"  ";
+        }
+        cout<<endl;
+    }
+}
 
-//             if(k == 0 || k = 2*i ){}
-//         }
-//     }
-// }
+void hollow_inverted_Pyramid(int n){
+
+    for(int i = 0; i < n; i++){
+
+        for(int j = 0; j < i; j++)
+            cout<<"  ";
+
+        for(int k = 0; k < 2 * (n - i) - 1; k++){
+
+            if( k == 0|| k == 2 * (n - i) - 2 || i == 0)
+                cout<<"* ";
+            else
+                cout<<"  ";
+        }
+        cout<<endl;
+    }
+}
+
 
 void floydsTriangle(int n){
 
@@ -208,6 +264,17 @@ void pascalsTriangle(int n){
     }
 }
 
+void pyramid(int rows){
+
+    for(int i = 0; i < rows; i++){
+
+        for(int j = 0; j <= i; j++){
+            cout<<i+1;
+        }
+        cout<<endl;
+    }
+}
+
 
 int main(){
 
@@ -221,5 +288,9 @@ int main(){
     // hourGlass(5);
     // hollowSquare(10);
     // floydsTriangle(6);
-    pascalsTriangle(5);
+    // pascalsTriangle(5);
+    // hollow_full_pyramid(5);
+    // hollow_inverted_Pyramid(5);
+
+    pyramid(5);
 }
