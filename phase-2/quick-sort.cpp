@@ -60,7 +60,7 @@ void quickSort(vector<int> &arr,int s, int e){
 
 int main(){
 
-    vector<int> v = {23,25,14,8,97,1,78,2,9,11,22,54,64,19,25,21};
+    vector<int> v = {5, 69, 12, 63, 109, 60, 64, 107, 9, 101, 23, 72, 11, 46, 2, 62};
 
     quickSort(v,0,v.size() -1);
 

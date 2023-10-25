@@ -82,6 +82,22 @@ void heapify(int arr[], int n, int i){
     }
 }
 
+void buildHeap(int arr[], int n){
+     for(int i = n/2; i>= 0; i--){ 
+        // started with n/2 as (n/2 + 1) -> n are all leaves nodes which are heapified already
+        heapify(arr, n, i);
+    }
+}
+
+void heap_sort(int arr[], int n){
+
+    for(int i = n - 1; i >=0; i--){
+
+        swap(arr[0],arr[i]);
+        heapify(arr,i,0);
+    }
+}
+
 int main(){
 
     // maxheap obj;
@@ -102,14 +118,22 @@ int main(){
     // obj.deleteFromHeap();
     // obj.print();
     
-    int arr[10] = {1, 23, 4,3,8, 10, 20,33, 78};
-    int n =  10;
-    for(int i = n/2; i>= 0; i--){
-        heapify(arr, n, i);
-    }
+    int arr[9] = {1, 23, 4,3,8, 10, 20,33, 78};
+    int n =  9;
+    
+    buildHeap(arr, n);
 
+    cout<<"Before heap sort ----->"<<endl;
     for(int i = 0; i < n; i++){
         cout<<arr[i]<<" ";
     }cout<<endl;
+
+    cout<<"After heap sort :---->"<<endl;
+    heap_sort(arr,9);
+
+    for(int i = 0; i < 9; i++){
+        cout<<arr[i]<<" ";
+    }cout<<endl;
+
     return 0;
 }
