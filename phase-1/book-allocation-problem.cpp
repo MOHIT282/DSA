@@ -58,7 +58,8 @@ int allocateBooks(int arr[], int size, int noOfStudents){
 int main(){
 
     int books[] = {12,34,67,90};
-    int ans = allocateBooks(books,4,2);
+    int numStudents = 2;
+    int ans = allocateBooks(books,4,numStudents);
     if(ans == -1){
         cout<<"All the sudents can't be assigned a book";
     }

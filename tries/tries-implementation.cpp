@@ -126,7 +126,7 @@ class Trie{
 int main(){
     Trie *t = new Trie();
 
-    vector<string> names = {"mohit","aayush","jatin","ritika","ruchika","anamika","rohan"};
+    vector<string> names = {"mohit","anmol","jatin","shivam","ruchika","anamika","rohan"};
 
     for(int i = 0; i < names.size(); i++){
         t->insertWord(names[i]);
@@ -138,7 +138,7 @@ int main(){
     
     cout<<"is mohit present in the trie--> "<<t->searchWord("mohit")<<endl;
 
-    cout<<"is any word starting with MO present of not --> "<<t->searchPrefix("mo")<<endl;
+    cout<<"is any word starting with mo present or not --> "<<t->searchPrefix("mo")<<endl;
 
     t->deleteWord("anamika");
     t->deleteWord("anamika");

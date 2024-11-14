@@ -76,8 +76,6 @@ void mergeSort(int *arr, int s, int e){
     // merge both the arrays
 
     merge(arr,s,e);
-
-
 }
 
 
