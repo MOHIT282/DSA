@@ -59,7 +59,7 @@ class Graph{
 
 int main(){
 
-    int V = 7;
+    int V = 8;
 
     Graph *g = new Graph(V); // create a graph with 7 vertices
 
@@ -75,7 +75,7 @@ int main(){
     vector<int> distances = g->Dijkstra(0); // find the shortest path from vertex 0
 
     for(int i = 0; i < V; i++){
-        cout << "Distance from vertex " << i << " to vertex 0 is " << distances[i] << endl; // print the distances
+        cout << "Distance from vertex " << i << " to vertex 0 is " << (distances[i] == INT_MAX? -1:distances[i]) << endl; // print the distances
     }
 
     return 0;
