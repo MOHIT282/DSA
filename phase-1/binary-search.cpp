@@ -5,7 +5,7 @@ using namespace std;
 bool binarySearch(int arr[], int size, int key){
 
     int beg = 0, end = size -1;
-    int mid = end + (beg - end)/2;
+    int mid = beg + (end - beg)/2;
     while(beg <= end){
         if( arr[mid] == key ){
             cout<<"Yes it is present at location : "<<mid<<endl;
