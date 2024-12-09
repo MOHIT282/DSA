@@ -39,32 +39,30 @@ int main(){
 
     int i = 0;
 
-    // while(i < intervals.size()){
+    while(i < intervals.size()){
 
-    //     vector<int> interval = intervals[i];
+        vector<int> interval = intervals[i];
 
-    //     if(!inserted and interval[0] > newInterval[0]){
+        if(!inserted and interval[0] > newInterval[0]){
 
-    //         merge(res, newInterval); // merge the new interval with the first interval if necessary
-    //         inserted = true;
-    //     }
+            merge(res, newInterval); // merge the new interval with the first interval if necessary
+            inserted = true;
+        }
 
-    //     else{
+        else{
 
-    //         if(res.size() and res.back()[1] >= interval[0]){
+            if(res.size() and res.back()[1] >= interval[0]){
 
-    //             res.back()[1] = max(res.back()[1], interval[1]); // merge overlapping intervals if necessary
-    //         }
-    //         else res.push_back(interval);
-    //         i++;
-    //     }
-    // }
+                res.back()[1] = max(res.back()[1], interval[1]); // merge overlapping intervals if necessary
+            }
+            else res.push_back(interval);
+            i++;
+        }
+    }
 
-    // if(!inserted) merge(res, newInterval); // if the new interval is not inserted, then insert it
+    if(!inserted) merge(res, newInterval); // if the new interval is not inserted, then insert it
 
-    // for( auto i : res) cout<<i[0]<<" "<<i[1]<<endl; // print the result
-
-    cout<<((-4 % 2) != 0)<<endl;
+    for( auto i : res) cout<<i[0]<<" "<<i[1]<<endl; // print the result
 
     return 0;
 
