@@ -21,13 +21,8 @@ bool isPossible(vector<int> &stalls, int cows, int mid){
 int allocateCowsPosition(vector<int> &stalls,int cows){
 
     sort(stalls.begin(),stalls.end());
-    int maxValue = -1;
-    for(int i = 0; i < stalls.size(); i++){
-
-        maxValue = max(maxValue,stalls[i]);
-    }
     int beg = 0,mid, ans = -1;
-    int end = maxValue;
+    int end = stalls[stalls.size()-1];
     while(beg <= end){
 
         mid = beg + (end - beg)/2;
@@ -45,7 +40,7 @@ int allocateCowsPosition(vector<int> &stalls,int cows){
 
 int main(){
 
-    vector<int> stalls = {4,2,1,3,6};
+    vector<int> stalls = {1, 2, 4, 8, 9};
     cout<<"The maximum distance between the cows is : "<<allocateCowsPosition(stalls,3);
 
 }
